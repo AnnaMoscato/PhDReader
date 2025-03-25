@@ -1,0 +1,25 @@
+2025-03-22 03:13:39,560 - INFO - Starting to scrape supervisors from https://www.unsw.edu.au/research/hdr/find-a-supervisor#search=&sort=relevance&startRank=1&numRanks=12&componentId=36c3802e-58bd-404b-90f6-07d44daf6b35
+2025-03-22 03:13:45,003 - INFO - Scraping page 1 of 5
+2025-03-22 03:14:05,582 - ERROR - Error during scraping: Message: 
+Stacktrace:
+#0 0x579003797ffa <unknown>
+#1 0x579003256970 <unknown>
+#2 0x5790032a8385 <unknown>
+#3 0x5790032a85b1 <unknown>
+#4 0x5790032f73c4 <unknown>
+#5 0x5790032ce2bd <unknown>
+#6 0x5790032f470c <unknown>
+#7 0x5790032ce063 <unknown>
+#8 0x57900329a328 <unknown>
+#9 0x57900329b491 <unknown>
+#10 0x57900375f42b <unknown>
+#11 0x5790037632ec <unknown>
+#12 0x579003746a22 <unknown>
+#13 0x579003763e64 <unknown>
+#14 0x57900372abef <unknown>
+#15 0x579003786558 <unknown>
+#16 0x579003786736 <unknown>
+#17 0x579003796e76 <unknown>
+#18 0x761b7a132609 start_thread
+
+2025-03-22 03:14:05,588 - WARNING - No data to export
