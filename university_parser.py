@@ -7,7 +7,7 @@ from selenium.webdriver import EdgeOptions
 
 class UniversityScraper():
     def __init__(self, url : str, input_field_id : tuple[By, str], submit_button_id : tuple[By, str],
-                  input_search_text : str, button_search_function, buttons_id, buttons_fn, researchers_id : tuple[By, str]) -> None:
+                  input_search_text : str, button_search_function, buttons_id, researchers_id : tuple[By, str]) -> None:
         print("Initialising webdriver")
         options = EdgeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -18,10 +18,7 @@ class UniversityScraper():
         print("Initialising variables")
         self.data = []
         self.button_search_function = button_search_function
-        if type(buttons_id) is function:
-            self.buttons_id = buttons_id
-        else:
-            self.buttons_by, self.buttons_id = buttons_id
+        self.buttons_by, self.buttons_id = buttons_id
         self.researchers_by, self.researchers_id = researchers_id 
         self.page_count = 2
         self.url = url
@@ -48,11 +45,8 @@ class UniversityScraper():
 
     def find_button(self):
         try:
-            if type(self.buttons_id) is str:
-                buttons = self.driver.find_elements(self.buttons_by, self.buttons_id)
-            else:
-                button_id, button_name = self.buttons_id(self.page_count)
-                buttons = self.driver.find_elements(button_id, button_name)
+            
+            buttons = self.driver.find_elements(self.buttons_by, self.buttons_id)
             next_page_button = None
             for b in buttons: 
                 print(f"accessible name: {b.accessible_name} of button {b}")
